@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.20",
+    "@react-three/drei": "^9.120.5",
+    "@react-three/fiber": "^8.17.10",
     "cra-template": "1.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
+    "three": "^0.172.0",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
