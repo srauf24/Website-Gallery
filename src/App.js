@@ -10,6 +10,7 @@ export default function App() {
     width: '150px',
     height: '150px',
     zIndex: 0,
+
   };
 
   return (
@@ -18,7 +19,7 @@ export default function App() {
         <h1>Gallery</h1>
         <h2>3D Model Viewer</h2>
         <model-viewer
-          src="/Polaroids.glb"
+          src="/Deer.glb"
           alt="Computer Model"
           auto-rotate={true} // Enable auto-rotation
           interaction-prompt="none" // Remove drag hand prompt
