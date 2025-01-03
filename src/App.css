@@ -11,6 +11,13 @@
   font-size: calc(10px + 2vmin); /* Responsive font size */
   color: white; /* White text color */
 }
-
+.h1 {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em; /* Adjust font size as needed */
+  color: white; /* Adjust text color as needed */
+}
 
 

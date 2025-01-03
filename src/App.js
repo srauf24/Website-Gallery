@@ -5,7 +5,7 @@ import '@google/model-viewer/dist/model-viewer';
 export default function App() {
   const modelStyle = {
     position: 'absolute',
-    top: '10px',
+    top: '5px',
     right: '10px',
     width: '150px',
     height: '150px',
@@ -16,8 +16,7 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Gallery</h1>
-        <h2>3D Model Viewer</h2>
+        <h1 className={"h1"}>Gallery</h1>
         <model-viewer
           src="/Deer.glb"
           alt="Computer Model"
