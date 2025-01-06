@@ -11,7 +11,7 @@
   font-size: calc(10px + 2vmin); /* Responsive font size */
   color: white; /* White text color */
 }
-.h1 {
+.title {
   position: absolute;
   top: 30px;
   left: 50%;
@@ -19,5 +19,26 @@
   font-size: 2em; /* Adjust font size as needed */
   color: white; /* Adjust text color as needed */
 }
+.input-form {
+  width: 300px; /* Set the width of the form */
+  height: 300px; /* Set the height of the form */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  border: 2px solid #fff; /* Add a border */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  background-color: #efd5d5; /* Optional: Add background color */
+  color: black; /* Change text color to black */
+}
+.input-form-title {
+  margin-bottom: 20px; /* Space below the title */
+}
+.input-form-text {
+  margin-bottom: 10px; /* Space below the text input */
+}
+.input-form-paragraph {
+  margin-top: 20px; /* Space above the paragraph */
+    font-size: 0.8em; /* Make the paragraph text smaller */
 
-
+}

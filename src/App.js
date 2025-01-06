@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import '@google/model-viewer/dist/model-viewer';
+import InputForm from './Components/InputForm';
 
 export default function App() {
   const modelStyle = {
@@ -16,7 +17,7 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className={"h1"}>Gallery</h1>
+        <h1 className={"title"}>Build Your Own Screenshot 📸</h1>
         <model-viewer
           src="/Deer.glb"
           alt="Computer Model"
@@ -26,6 +27,7 @@ export default function App() {
           rotation-per-second="30deg" // Spin clockwise
           style={modelStyle} // Add inline styles
         ></model-viewer>
+        <InputForm title="Url" />
       </header>
     </div>
   );
