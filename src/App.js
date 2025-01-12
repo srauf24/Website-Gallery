@@ -2,8 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import '@google/model-viewer/dist/model-viewer';
 import InputForm from './Components/InputForm';
-import * as querystring from 'node:querystring';
-
+const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
 export default function App() {
   const modelStyle = {
     position: 'absolute',
@@ -13,7 +12,7 @@ export default function App() {
     height: '150px',
     zIndex: 0,
   };
-
+  const [screenShot, setScreenShot] = useState({});
   const [inputs, setInputs] = useState({
     url: '',
     format: '',
@@ -22,6 +21,16 @@ export default function App() {
     width: '',
     height: '',
   });
+  const reset = () => {
+    setInputs({
+      url: '',
+      format: '',
+      no_ads: '',
+      no_cookie_banners: '',
+      width: '',
+      height: '',
+    });
+  }
 
   const submitForm = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
@@ -54,8 +63,15 @@ export default function App() {
     let url_starter = 'https://';
     let fullURL = url_starter + inputs.url;
     let query = `https://api.apiflash.com/v1/urltoimage?access_key=${ACCESS_KEY}&url=${fullURL}&format=${inputs.format}&width=${inputs.width}&height=${inputs.height}&no_cookie_banners=${inputs.no_cookie_banners}&no_ads=${inputs.no_ads}&wait_until=${wait_until}&response_type=${response_type}&fail_on_status=${fail_on_status}`;
+    callAPI(query).catch(console.error);
+
     // Add your form submission logic here
   };
+  const callAPI = async (query) => {
+    const response = await fetch(query);
+    const json = await response.json();
+    console.log(json);
+}
 
   return (
     <div className="App">
