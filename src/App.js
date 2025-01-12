@@ -1,7 +1,9 @@
 import './App.css';
 import React from 'react';
+import {useState} from "react"
 import '@google/model-viewer/dist/model-viewer';
 import InputForm from './Components/InputForm';
+const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
 
 export default function App() {
   const modelStyle = {
@@ -13,6 +15,14 @@ export default function App() {
     zIndex: 0,
 
   };
+  const [inputs, setInputs] = useState({
+  url: "",
+  format: "",
+  no_ads: "",
+  no_cookie_banners: "",
+  width: "",
+  height: "",
+});
 
   return (
     <div className="App">
