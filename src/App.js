@@ -23,7 +23,10 @@ export default function App() {
   width: "",
   height: "",
 });
+const submitForm = () => {
 
+
+}
   return (
     <div className="App">
       <header className="App-header">
@@ -39,30 +42,16 @@ export default function App() {
           style={modelStyle} // Add inline styles
         ></model-viewer>
         <InputForm
-          title="url"
-          description="Input a link to any website you would like to take a screenshot of, do not worry about including https or any protocol"
-        />
-        <InputForm
-          title="format"
-          description="Input which image format you would prefer for your screenshot: jpeg, png, or webp"
-        />
-        <InputForm
-          title="no_ads"
-          description="Input true or false if you would like your website screenshot to not contain any ads"
-        />
-        <InputForm
-          title="no_cookie_banners"
-          description="Input true or false if you would like your website screenshot to not contain those annoying 'allow cookies' banners"
-        />
-        <InputForm
-          title="width"
-          description="Choose the width of your screenshot (in pixels)"
-        />
-        <InputForm
-          title="height"
-          description="Choose the height of your screenshot (in pixels)"
-        />
-
+          inputs={inputs}
+        handleChange={(e) =>
+          setInputs((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value.trim(),
+          }))
+        }
+        onSubmit={submitForm}
+      />
+      <br></br>
 
       </header>
     </div>
