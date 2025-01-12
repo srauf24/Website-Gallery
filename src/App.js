@@ -12,7 +12,7 @@ export default function App() {
     height: '150px',
     zIndex: 0,
   };
-  const [screenShot, setScreenShot] = useState({});
+  const [currentImage, setCurrentImage] = useState({});
   const [inputs, setInputs] = useState({
     url: '',
     format: '',
@@ -70,7 +70,13 @@ export default function App() {
   const callAPI = async (query) => {
     const response = await fetch(query);
     const json = await response.json();
-    console.log(json);
+    console.log("the json", json);
+    if (!json.url) {
+      alert("The screenshot couldn't be taken.");
+        }
+    else {
+setCurrentImage(json.url);
+  reset();        }
 }
 
   return (
@@ -97,6 +103,7 @@ export default function App() {
           onSubmit={submitForm}
         />
         <br />
+
       </header>
     </div>
   );
