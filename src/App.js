@@ -3,6 +3,7 @@ import React from 'react';
 import {useState} from "react"
 import '@google/model-viewer/dist/model-viewer';
 import InputForm from './Components/InputForm';
+import * as querystring from "node:querystring";
 const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
 
 export default function App() {
@@ -43,8 +44,15 @@ const submitForm = (e) => {
         inputs[key] = defaultValues[key];
       }
     }
+    makeQuery();
   }
-
+  const makeQuery = () => {
+    let wait_until = "network_idle";
+    let response_type = "json";
+    let fail_on_status = "400%2C404%2C500-511";
+    let url_starter = "https://";
+    let fullURL = url_starter + inputs.url;
+    let query = `https://api.apiflash.com/v1/urltoimage?access_key=${ACCESS_KEY}&url=${fullURL}&format=${inputs.format}&width=${inputs.width}&height=${inputs.height}&no_cookie_banners=${inputs.no_cookie_banners}&no_ads=${inputs.no_ads}&wait_until=${wait_until}&response_type=${response_type}&fail_on_status=${fail_on_status}`;
   // Add your form submission logic here
 };
   return (
