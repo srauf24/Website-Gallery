@@ -9,7 +9,7 @@ const inputsInfo = [
 ];
 const InputForm = ({inputs, handleChange, onSubmit}) => {
   return (
-      <form className="form-container">
+      <form className="form-container" onSubmit={onSubmit}>
           <h3> Select your Image Attributes</h3>
           {inputs &&
               Object.entries(inputs).map(([category, value], index) => (
