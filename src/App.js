@@ -13,6 +13,7 @@ export default function App() {
     zIndex: 0,
   };
   const [currentImage, setCurrentImage] = useState({});
+  const [previousImages, setPreviousImages] = useState([]);
   const [inputs, setInputs] = useState({
     url: '',
     format: '',
@@ -81,6 +82,7 @@ const callAPI = async (query) => {
       alert("The screenshot couldn't be taken.");
     } else {
       setCurrentImage(json.url);
+      setPreviousImages((images) => [...images, json.url]);
       reset();
     }
   } catch (error) {
