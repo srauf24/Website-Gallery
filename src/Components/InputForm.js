@@ -10,24 +10,25 @@ const inputsInfo = [
 const InputForm = ({inputs, handleChange, onSubmit}) => {
   return (
       <form className="form-container">
-        {inputs &&
-            Object.entries(inputs).map(([category, value], index) => (
-                <li className="form" key={index}>
-                  <h2>{category} </h2>
-                  <input
-                      type="text"
-                      name={category}
-                      value={value}
-                      placeholder="Input this attribute..."
-                      onChange={handleChange}
-                      className="textbox"
-                  />
-                  <br></br>
-                  <br></br>
-                  <p> {inputsInfo[index]}</p>
-                </li>
-            ))}
-        <input type="submit" value="Take that Pic! 🎞" className="submit-button"/>
+          <h3> Select your Image Attributes</h3>
+          {inputs &&
+              Object.entries(inputs).map(([category, value], index) => (
+                  <li className="form" key={index}>
+                      <h2>{category} </h2>
+                      <input
+                          type="text"
+                          name={category}
+                          value={value}
+                          placeholder="Input this attribute..."
+                          onChange={handleChange}
+                          className="textbox"
+                      />
+                      <br></br>
+                      <br></br>
+                      <p> {inputsInfo[index]}</p>
+                  </li>
+              ))}
+          <input type="submit" value="Take that Pic! 🎞" className="submit-button"/>
       </form>
 
   );
