@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Website Screenshot Gallery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Live Demo**: [https://website-gallery-one.vercel.app/](https://website-gallery-one.vercel.app/)
 
-## Available Scripts
+## Overview
+Website Screenshot Gallery is a React-based web application that allows users to generate and store screenshots of any publicly accessible website. Leveraging the [Apiflash](https://apiflash.com/) screenshot API, the app can capture snapshots with various customizations (e.g. format, size, ad-blocking, cookie-banner removal).
 
-In the project directory, you can run:
+## Key Features
+- **Screenshot Generation**: Quickly capture full-page screenshots of any URL.
+- **Customizable Attributes**:  
+  - **Format**: Choose among JPEG, PNG, or WebP.  
+  - **Dimensions**: Specify width and height (in pixels).  
+  - **No Ads / No Cookie Banners**: Toggle these for a cleaner screenshot.  
+- **Gallery**: Stores your previous screenshots in a gallery for easy reference.
 
-### `npm start`
+## Tech Stack
+- **Front-End**: 
+  - [React](https://reactjs.org/) (Create React App), a popular JavaScript library for building component-based user interfaces.
+  - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS) (including custom styling and gradients) for a professional UI.
+- **API / Networking**: 
+  - [Apiflash Screenshot API](https://apiflash.com/) for capturing website images.   
+  - Native `fetch` API in React for asynchronous requests.
+- **Build & Tooling**:
+  - [Vercel](https://vercel.com/) for rapid deployment.
+  - [npm](https://www.npmjs.com/) for package management.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation & Setup
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/<your-username>/website-gallery.git
+   cd website-gallery
+   ```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Create a `.env` file** at the project root with your [Apiflash](https://apiflash.com/) key:
+   ```bash
+   REACT_APP_ACCESS_KEY=YOUR_APIFLASH_KEY
+   ```
+4. **Run the development server**:
+   ```bash
+   npm start
+   ```
+   This will start the app at [http://localhost:3000](http://localhost:3000).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
+1. **Enter a URL** in the designated field (no protocol needed; it will prepend https:// automatically if missing).
+2. **Select desired attributes** (e.g., format, width, height).
+3. **Click "Take that Pic!"** to trigger a screenshot request via Apiflash.
+4. **View and store** the returned screenshot; it will display below the form and be added to the gallery.
 
-### `npm test`
+## Future Improvements
+- **User Authentication**: Optionally store screenshots in a personalized user account.
+- **Image Editing Tools**: Add basic cropping or annotations.
+- **Enhanced Error Handling**: Offer more detailed feedback for invalid URLs or API limits.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Contributing
+1. Fork the project and clone locally.
+2. Create a new branch for your feature or bugfix.
+3. Commit and push your changes to GitHub.
+4. Submit a Pull Request.
 
-### `npm run build`
+## License
+This project is open source. Feel free to use it, modify it, and distribute it.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Built with ♥ in React. For any questions, feel free to reach out or open an issue.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enjoy the live demo at [website-gallery-one.vercel.app](https://website-gallery-one.vercel.app/)!
