@@ -1,44 +1,186 @@
-.App {
-  text-align: left; /* Center text inside the app */
+/* Base / Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.App-header {
-  background-color: #713838; /* Dark background for header */
-  min-height: 100vh; /* Full viewport height */
-  display: flex; /* Flexbox for alignment */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  font-size: calc(10px + 2vmin); /* Responsive font size */
-  color: white; /* White text color */
-}
-.title {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2em; /* Adjust font size as needed */
-  color: white; /* Adjust text color as needed */
-}
-.input-form {
-  width: 300px; /* Set the width of the form */
-  height: 300px; /* Set the height of the form */
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  border: 2px solid #fff; /* Add a border */
-  border-radius: 10px; /* Optional: Add rounded corners */
-  background-color: #efd5d5; /* Optional: Add background color */
-  color: black; /* Change text color to black */
-}
-.input-form-title {
-  margin-bottom: 20px; /* Space below the title */
-}
-.input-form-text {
-  margin-bottom: 10px; /* Space below the text input */
-}
-.input-form-paragraph {
-  margin-top: 20px; /* Space above the paragraph */
-    font-size: 0.8em; /* Make the paragraph text smaller */
 
+body {
+  font-family: 'Roboto', sans-serif;
+  /* Slight wine-to-lighter gradient */
+  background-color: #713838;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally inside .App */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Title / Header */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.title p {
+  font-size: 1.2rem;
+  color: #efd5d5;
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Model Viewer */
+model-viewer {
+  margin-bottom: 1.5rem;
+}
+
+/* Form Container */
+.form-container {
+  width: 90%;
+  max-width: 600px;
+  background-color: #ffffff;
+  color: #2d3748;
+  border-radius: 10px;
+  padding: 20px;
+  /* Center the form container by using auto left/right margins */
+  margin: 2rem auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1),
+              0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15),
+              0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #713838;
+  margin-bottom: 15px;
+}
+
+/* Each Form Entry */
+.form {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.form input[type="text"] {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.form p {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #713838;
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #8c4b0f;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Screenshot Display */
+.screenshot {
+  max-width: 80%;
+  margin: 1rem auto;
+  border: 2px solid #713838;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for Query Status, Gallery, etc. */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+  color: #ffffff;
+}
+
+.container h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  color: #efd5d5;
+}
+
+.container p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.container img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Media Query */
+@media (max-width: 768px) {
+  .title h1 {
+    font-size: 2rem;
+  }
+  .screenshot {
+    max-width: 100%;
+  }
+  .container {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
 }

@@ -141,6 +141,7 @@ const callAPI = async (query) => {
             &no_ads={inputs.no_ads}
             <br></br>
           </p>
+          <h1> Screen Shot Gallery</h1>
           <Gallery images={previousImages} />
         </div>
 
