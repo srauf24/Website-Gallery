@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import '@google/model-viewer/dist/model-viewer';
 import InputForm from './Components/InputForm';
+import Gallery from "./Components/Gallery";
 const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
 export default function App() {
   const modelStyle = {
@@ -140,7 +141,9 @@ const callAPI = async (query) => {
             &no_ads={inputs.no_ads}
             <br></br>
           </p>
+          <Gallery images={previousImages} />
         </div>
+
 
         <br></br>
       </header>
