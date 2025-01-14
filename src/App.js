@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import '@google/model-viewer/dist/model-viewer';
 import InputForm from './Components/InputForm';
 import Gallery from "./Components/Gallery";
-import { auth, fireStore } from '@/firebase'; // Assuming your Firebase configuration is correct
+import { fireStore } from './firebase';
 import { collection, addDoc } from 'firebase/firestore';
 const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
 export default function App() {
