@@ -4,7 +4,7 @@ import '@google/model-viewer/dist/model-viewer';
 import InputForm from './Components/InputForm';
 import Gallery from "./Components/Gallery";
 import { fireStore } from './firebase';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, query, getDocs } from 'firebase/firestore';
 const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
 export default function App() {
   const modelStyle = {
@@ -70,12 +70,31 @@ export default function App() {
     let fullURL = inputs.url.startsWith('http')
       ? inputs.url
       : 'https://' + inputs.url;
-
+    viewDatabase()
     let query = `https://api.apiflash.com/v1/urltoimage?access_key=${ACCESS_KEY}&url=${fullURL}&format=${inputs.format}&width=${inputs.width}&height=${inputs.height}&no_cookie_banners=${inputs.no_cookie_banners}&no_ads=${inputs.no_ads}&wait_until=${wait_until}&response_type=${response_type}&fail_on_status=${fail_on_status}`;
-    callAPI(query).catch(console.error);
+    //callAPI(query).catch(console.error);
 
     // Add your form submission logic here
   };
+  const viewDatabase = async () => {
+
+    try {
+      const snapshot = query(collection(fireStore, 'gallery'));
+      console.log(snapshot);
+      const docs = await getDocs(snapshot);
+      console.log(docs)
+      const inventoryList = [];
+      docs.forEach((doc) => {
+        inventoryList.push({
+          name: doc.id,
+          ...doc.data(),
+        });
+      });
+      console.log(inventoryList);
+    } catch (error) {
+      console.error('Error fetching inventory:', error);
+    }
+  }
 const callAPI = async (query) => {
   try {
     const response = await fetch(query);
@@ -86,7 +105,6 @@ const callAPI = async (query) => {
     } else {
       setCurrentImage(json.url);
       setPreviousImages((images) => [...images, json.url]);
-      await addDoc(collection(fireStore, 'screenshots'), { url: json.url });
       reset();
     }
   } catch (error) {
