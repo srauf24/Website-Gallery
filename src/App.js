@@ -86,6 +86,7 @@ const callAPI = async (query) => {
     } else {
       setCurrentImage(json.url);
       setPreviousImages((images) => [...images, json.url]);
+      await addDoc(collection(fireStore, 'screenshots'), { url: json.url });
       reset();
     }
   } catch (error) {
