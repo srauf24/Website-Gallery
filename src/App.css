@@ -184,3 +184,26 @@ model-viewer {
     padding: 0 1rem;
   }
 }
+/* src/Components/Gallery.css */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  width: 300px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
