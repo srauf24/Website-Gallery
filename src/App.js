@@ -8,6 +8,9 @@ import { fireStore } from './firebase';
 import { collection, addDoc, query, getDocs } from 'firebase/firestore';
 
 const ACCESS_KEY = process.env.REACT_APP_ACCESS_KEY;
+if (!ACCESS_KEY) {
+  console.error('❌ Missing environment variable: REACT_APP_ACCESS_KEY');
+}
 
 export default function App() {
   const modelStyle = {
